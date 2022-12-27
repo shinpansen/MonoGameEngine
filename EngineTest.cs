@@ -12,9 +12,10 @@ namespace ShinpansenEngine;
 public class EngineTest : Game
 {
     private GraphicsDeviceManager _graphicsDeviceManager;
-    private GraphicsEngine _emagonomGraphicsEngine;
-    private RectangleShape _rs = null;
-    private OvalShape _os = null;
+    private GraphicsEngine _graphicsEngine;
+    private RectangleShape _rs;
+    private OvalShape _cs;
+    private OvalShape _os;
     private List<CircleShape> lesCercles = new List<CircleShape>();
 
     public EngineTest()
@@ -26,17 +27,20 @@ public class EngineTest : Game
 
     protected override void Initialize()
     {
-        _emagonomGraphicsEngine = new GraphicsEngine(GraphicsDevice, Content);
+        _graphicsEngine = new GraphicsEngine(GraphicsDevice, Content);
         base.Initialize();
     }
 
     protected override void LoadContent()
     {
-        _rs = new RectangleShape(_emagonomGraphicsEngine, 
+        _rs = new RectangleShape(_graphicsEngine, 
             Color.LimeGreen, new Vector2(100, 100), 
             new Vector2(300, 300));
-        _os = new OvalShape(_emagonomGraphicsEngine,
-            new Color(255, 0, 66), new Vector2(100, 100), new Vector2(300, 200),
+        _cs = new OvalShape(_graphicsEngine,
+            Color.Orange, new Vector2(10, 10), new Vector2(300, 300),
+            50, Color.BlueViolet);
+        _os = new OvalShape(_graphicsEngine,
+            new Color(255, 0, 66), new Vector2(0, 0), new Vector2(300, 150),
             50, Color.LimeGreen);
 
         /*_texture2D = new Texture2D(GraphicsDevice, 1, 1);
@@ -71,6 +75,9 @@ public class EngineTest : Game
         GraphicsDevice.Clear(new Color(36, 36, 36));
 
         //_rs.Draw(gameTime);
+
+        _os.Location = new Vector2(Mouse.GetState().X - 150, Mouse.GetState().Y - 75);
+        _cs.Draw(gameTime);
         _os.Draw(gameTime);
         //lesCercles.ForEach(c => c.Draw(gameTime));
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>/home/shinpansen/Documents/Emagonom/Content/pattern.png</SourceFile>
+  <SourceFile>/home/shinpansen/Documents/MonoGame/ShinpansenEngine/Content/pattern.png</SourceFile>
   <SourceTime>2022-12-04T19:20:23.211395+01:00</SourceTime>
-  <DestFile>/home/shinpansen/Documents/Emagonom/Content/bin/DesktopGL/pattern.xnb</DestFile>
-  <DestTime>2022-12-11T17:13:22.4264246+01:00</DestTime>
+  <DestFile>/home/shinpansen/Documents/MonoGame/ShinpansenEngine/Content/bin/DesktopGL/pattern.xnb</DestFile>
+  <DestTime>2022-12-27T18:18:02.6719653+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T13:44:56+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

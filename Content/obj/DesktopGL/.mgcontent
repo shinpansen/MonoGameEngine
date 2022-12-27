@@ -4,11 +4,11 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>/home/shinpansen/Documents/Emagonom/Content/pattern.png</File>
-    <File>/home/shinpansen/Documents/Emagonom/Content/Shaders/Rectangle.fx</File>
+    <File>/home/shinpansen/Documents/MonoGame/ShinpansenEngine/Content/Shaders/Circle.fx</File>
+    <File>/home/shinpansen/Documents/MonoGame/ShinpansenEngine/Content/pattern.png</File>
+    <File>/home/shinpansen/Documents/MonoGame/ShinpansenEngine/Content/Shaders/Rectangle.fx</File>
   </SourceFiles>
   <DestFiles>
-    <File xsi:nil="true" />
     <File xsi:nil="true" />
   </DestFiles>
 </SourceFileCollection>
