@@ -2,7 +2,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ShinpansenEngine.Engines;
 
-namespace ShinpansenEngine._2D.Graphics.Shapes
+namespace ShinpansenEngine._2D.Graphics.Drawable
 {
     public class CircleShape : OvalShape
     {

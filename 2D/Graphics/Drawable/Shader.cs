@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace ShinpansenEngine._2D.Primitives
+namespace ShinpansenEngine._2D.Graphics.Drawable
 {
     public class Shader : IDisposable
     {

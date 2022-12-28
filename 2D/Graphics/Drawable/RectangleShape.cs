@@ -2,9 +2,9 @@ using Microsoft.Xna.Framework;
 using ShinpansenEngine.Engines;
 using ShinpansenEngine._2D.Graphics.Interfaces;
 
-namespace ShinpansenEngine._2D.Graphics.Shapes;
+namespace ShinpansenEngine._2D.Graphics.Drawable;
 
-public class RectangleShape : DrawableShape
+public class RectangleShape : Shape
 {
     private static readonly string RectangleShapeAssetName = "Shaders/Rectangle";
 

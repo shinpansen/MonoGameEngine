@@ -1,12 +1,10 @@
 using System;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using ShinpansenEngine.Engines;
-using ShinpansenEngine._2D.Graphics.Interfaces;
 
-namespace ShinpansenEngine._2D.Graphics.Shapes;
+namespace ShinpansenEngine._2D.Graphics.Drawable;
 
-public class OvalShape : DrawableShape
+public class OvalShape : Shape
 {
     private static readonly string OvalShapeAssetName = "Shaders/Circle";
 

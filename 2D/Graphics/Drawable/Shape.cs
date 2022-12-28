@@ -2,12 +2,13 @@ using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ShinpansenEngine.Engines;
-using ShinpansenEngine._2D.Primitives;
+using ShinpansenEngine._2D.Graphics.Drawable;
+using ShinpansenEngine._2D.Graphics.Geometry;
 using ShinpansenEngine._2D.Graphics.Interfaces;
 
-namespace ShinpansenEngine._2D.Graphics.Shapes
+namespace ShinpansenEngine._2D.Graphics.Drawable
 {
-    public abstract class DrawableShape : Shape, IDrawable2D, IShader2D
+    public abstract class Shape : Geometry.Shape, IDrawable2D, IShader2D
     {
         protected GraphicsEngine GraphicsEngine;
         protected Texture2D Texture2D;
@@ -16,7 +17,7 @@ namespace ShinpansenEngine._2D.Graphics.Shapes
         public Color OutlineColor = Color.Transparent;
         public uint OutlineThickness = 100;
 
-        public DrawableShape(GraphicsEngine graphicsEngine, string shaderAssetName)
+        public Shape(GraphicsEngine graphicsEngine, string shaderAssetName)
         {
             if(graphicsEngine == null)
                 throw new ArgumentNullException("GraphicsEngine must be initialized");
@@ -26,7 +27,7 @@ namespace ShinpansenEngine._2D.Graphics.Shapes
             InitializeShaderParameters();
         }
 
-        public DrawableShape(GraphicsEngine graphicsEngine, 
+        public Shape(GraphicsEngine graphicsEngine, 
                              string shaderAssetName,
                              Vector2 location, 
                              Vector2 size) : 
@@ -37,7 +38,7 @@ namespace ShinpansenEngine._2D.Graphics.Shapes
             SetTextureFromColor(Color.Red);
         }
 
-        public DrawableShape(GraphicsEngine graphicsEngine, 
+        public Shape(GraphicsEngine graphicsEngine, 
                              string shaderAssetName,
                              Vector2 location, 
                              Vector2 size,
@@ -49,7 +50,7 @@ namespace ShinpansenEngine._2D.Graphics.Shapes
             this.OutlineColor = outlineColor;
         }
 
-        public DrawableShape(GraphicsEngine graphicsEngine,
+        public Shape(GraphicsEngine graphicsEngine,
                              string shaderAssetName,
                              string textureAssetName,
                              Vector2 location,
@@ -59,7 +60,7 @@ namespace ShinpansenEngine._2D.Graphics.Shapes
             SetTextureFromContent(textureAssetName);
         }
 
-        public DrawableShape(GraphicsEngine graphicsEngine,
+        public Shape(GraphicsEngine graphicsEngine,
                              string shaderAssetName,
                              string textureAssetName,
                              Vector2 location,
@@ -71,7 +72,7 @@ namespace ShinpansenEngine._2D.Graphics.Shapes
             SetTextureFromContent(textureAssetName);
         }
 
-        public DrawableShape(GraphicsEngine graphicsEngine,
+        public Shape(GraphicsEngine graphicsEngine,
                              string shaderAssetName,
                              Color color, 
                              Vector2 location, 
@@ -81,7 +82,7 @@ namespace ShinpansenEngine._2D.Graphics.Shapes
             SetTextureFromColor(color);
         }
 
-        public DrawableShape(GraphicsEngine graphicsEngine,
+        public Shape(GraphicsEngine graphicsEngine,
                              string shaderAssetName,
                              Color color, 
                              Vector2 location, 
@@ -93,9 +94,9 @@ namespace ShinpansenEngine._2D.Graphics.Shapes
             SetTextureFromColor(color);
         }
 
-        public void SetTextureFromContent(string content)
+        public void SetTextureFromContent(string assetName)
         {
-            Texture2D = GraphicsEngine.ContentManager.Load<Texture2D>(content);
+            Texture2D = GraphicsEngine.GetTexture2D(assetName);
         }
 
         public void SetTextureFromColor(Color color)

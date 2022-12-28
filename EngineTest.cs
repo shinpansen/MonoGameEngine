@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using ShinpansenEngine._2D.Graphics.Shapes;
+using ShinpansenEngine._2D.Graphics.Drawable;
 using ShinpansenEngine.Engines;
 using System.Collections.Generic;
 using System.Linq;
