@@ -55,4 +55,10 @@ public class OvalShape : Shape
                      base(graphicsEngine, OvalShapeAssetName, color, location, size, outlineThickness, outlineColor)
     {
     }
+
+    public override Point GetCanvasSize()
+    {
+        int maxSize = Convert.ToInt32(Math.Max(this.Size.X, this.Size.Y));
+        return new Point(maxSize, maxSize);
+    }
 }

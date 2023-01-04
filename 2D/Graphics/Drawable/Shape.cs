@@ -28,10 +28,10 @@ namespace ShinpansenEngine._2D.Graphics.Drawable
         }
 
         public Shape(GraphicsEngine graphicsEngine, 
-                             string shaderAssetName,
-                             Vector2 location, 
-                             Vector2 size) : 
-                             this(graphicsEngine, shaderAssetName)
+                     string shaderAssetName,
+                     Vector2 location, 
+                     Vector2 size) : 
+                     this(graphicsEngine, shaderAssetName)
         {
             this.Location = location;
             this.Size = size;
@@ -39,57 +39,57 @@ namespace ShinpansenEngine._2D.Graphics.Drawable
         }
 
         public Shape(GraphicsEngine graphicsEngine, 
-                             string shaderAssetName,
-                             Vector2 location, 
-                             Vector2 size,
-                             uint outlineThickness,
-                             Color outlineColor) : 
-                             this(graphicsEngine, shaderAssetName, location, size)
-        {
+                     string shaderAssetName,
+                     Vector2 location, 
+                     Vector2 size,
+                     uint outlineThickness,
+                     Color outlineColor) : 
+                     this(graphicsEngine, shaderAssetName, location, size)
+{
             this.OutlineThickness = outlineThickness;
             this.OutlineColor = outlineColor;
         }
 
         public Shape(GraphicsEngine graphicsEngine,
-                             string shaderAssetName,
-                             string textureAssetName,
-                             Vector2 location,
-                             Vector2 size) : 
-                             this(graphicsEngine, shaderAssetName, location, size)
+                     string shaderAssetName,
+                     string textureAssetName,
+                     Vector2 location,
+                     Vector2 size) : 
+                     this(graphicsEngine, shaderAssetName, location, size)
         {
             SetTextureFromContent(textureAssetName);
         }
 
         public Shape(GraphicsEngine graphicsEngine,
-                             string shaderAssetName,
-                             string textureAssetName,
-                             Vector2 location,
-                             Vector2 size,
-                             uint outlineThickness,
-                             Color outlineColor) : 
-                             this(graphicsEngine, shaderAssetName, location, size, outlineThickness, outlineColor)
+                     string shaderAssetName,
+                     string textureAssetName,
+                     Vector2 location,
+                     Vector2 size,
+                     uint outlineThickness,
+                     Color outlineColor) : 
+                     this(graphicsEngine, shaderAssetName, location, size, outlineThickness, outlineColor)
         {
             SetTextureFromContent(textureAssetName);
         }
 
         public Shape(GraphicsEngine graphicsEngine,
-                             string shaderAssetName,
-                             Color color, 
-                             Vector2 location, 
-                             Vector2 size) : 
-                             this(graphicsEngine, shaderAssetName, location, size)
+                     string shaderAssetName,
+                     Color color, 
+                     Vector2 location, 
+                     Vector2 size) : 
+                     this(graphicsEngine, shaderAssetName, location, size)
         {
             SetTextureFromColor(color);
         }
 
         public Shape(GraphicsEngine graphicsEngine,
-                             string shaderAssetName,
-                             Color color, 
-                             Vector2 location, 
-                             Vector2 size,
-                             uint outlineThickness,
-                             Color outlineColor) : 
-                             this(graphicsEngine, shaderAssetName, location, size, outlineThickness, outlineColor)
+                     string shaderAssetName,
+                     Color color, 
+                     Vector2 location, 
+                     Vector2 size,
+                     uint outlineThickness,
+                     Color outlineColor) : 
+                     this(graphicsEngine, shaderAssetName, location, size, outlineThickness, outlineColor)
         {
             SetTextureFromColor(color);
         }
@@ -103,6 +103,11 @@ namespace ShinpansenEngine._2D.Graphics.Drawable
         {
             Texture2D = new Texture2D(GraphicsEngine.GraphicsDevice, 1, 1);
             Texture2D.SetData<Color>(new Color[] { color });
+        }
+
+        public virtual Point GetCanvasSize()
+        {
+            return new Point((int)this.Size.X, (int)this.Size.Y);
         }
 
         public void InitializeShaderParameters()
@@ -128,9 +133,10 @@ namespace ShinpansenEngine._2D.Graphics.Drawable
         public void Draw(GameTime gameTime)
         {
             UpdateShaderParameters();
+            var test = GetCanvasSize();
             GraphicsEngine.SpriteBatch.Begin(effect:Shader.ShaderEffect);
             GraphicsEngine.SpriteBatch.Draw(Texture2D, 
-                new Rectangle(Location.ToPoint(), Size.ToPoint()), Color.White);
+                new Rectangle(Location.ToPoint(), GetCanvasSize()), Color.White);
             GraphicsEngine.SpriteBatch.End();
         }
     }

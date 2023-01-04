@@ -6,5 +6,6 @@ public interface IDrawable2D
 {
     void SetTextureFromContent(string content);
     void SetTextureFromColor(Color color);
+    Point GetCanvasSize();
     void Draw(GameTime gameTime);
 }

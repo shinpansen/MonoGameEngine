@@ -1,4 +1,3 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
 "/home/shinpansen/Documents/MonoGame/ShinpansenEngine/Content/pattern.png","/home/shinpansen/Documents/MonoGame/ShinpansenEngine/Content/bin/DesktopGL/pattern.xnb","TextureProcessor","Texture2DContent",114818,1409665,0.3266137
-"/home/shinpansen/Documents/MonoGame/ShinpansenEngine/Content/Shaders/Circle.fx","/home/shinpansen/Documents/MonoGame/ShinpansenEngine/Content/bin/DesktopGL/Shaders/Circle.xnb","EffectProcessor","CompiledEffectContent",1340,1700,7.259422
 "/home/shinpansen/Documents/MonoGame/ShinpansenEngine/Content/Shaders/Rectangle.fx","/home/shinpansen/Documents/MonoGame/ShinpansenEngine/Content/bin/DesktopGL/Shaders/Rectangle.xnb","EffectProcessor","CompiledEffectContent",684,515,6.9959908

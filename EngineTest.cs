@@ -37,8 +37,8 @@ public class EngineTest : Game
             Color.LimeGreen, new Vector2(100, 100), 
             new Vector2(300, 300));
         _cs = new OvalShape(_graphicsEngine,
-            Color.Orange, new Vector2(10, 10), new Vector2(300, 300),
-            50, Color.BlueViolet);
+            Color.Orange, new Vector2(10, 10), new Vector2(200, 400),
+            0, Color.BlueViolet);
         _os = new OvalShape(_graphicsEngine,
             new Color(255, 0, 66), new Vector2(0, 0), new Vector2(300, 150),
             50, Color.LimeGreen);
@@ -76,9 +76,9 @@ public class EngineTest : Game
 
         //_rs.Draw(gameTime);
 
-        _os.Location = new Vector2(Mouse.GetState().X - 150, Mouse.GetState().Y - 75);
+        //_os.Location = new Vector2(Mouse.GetState().X - 150, Mouse.GetState().Y - 75);
         _cs.Draw(gameTime);
-        _os.Draw(gameTime);
+        //_os.Draw(gameTime);
         //lesCercles.ForEach(c => c.Draw(gameTime));
 
         base.Draw(gameTime);
